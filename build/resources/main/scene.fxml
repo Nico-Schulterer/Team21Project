@@ -1,11 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.FXMLController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.FXMLController">
     <children>
-        <Label fx:id="label" text="Label" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <HBox fx:id="background" prefHeight="720.0" prefWidth="960.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#057213" height="720.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="960.0" />
+               </children></HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#574428" height="119.0" stroke="BLACK" strokeType="INSIDE" width="960.0" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button layoutX="415.0" layoutY="77.0" mnemonicParsing="false" text="Hit" />
+            <Button layoutX="515.0" layoutY="77.0" mnemonicParsing="false" text="Stand" />
+            <Button layoutX="884.0" layoutY="21.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="Reset" />
+            <HBox layoutX="17.0" layoutY="14.0" prefHeight="100.0" prefWidth="62.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="Play" />
+               </children>
+            </HBox>
+              <Label fx:id="label" layoutX="447.0" layoutY="20.0" text="Blackjack">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="420.0" layoutY="690.0" text="Player Value: " />
+            <Label layoutX="431.0" layoutY="352.0" text="Dealer Value: " />
+            <HBox fx:id="playerzone" layoutX="8.0" layoutY="369.0" prefHeight="340.0" prefWidth="946.0" spacing="10.0" />
+            <HBox fx:id="dealerzone" layoutX="7.0" layoutY="135.0" prefHeight="217.0" prefWidth="946.0" spacing="10.0" />
+         </children>
+      </AnchorPane>
     </children>
 </StackPane>
