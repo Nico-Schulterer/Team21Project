@@ -22,8 +22,8 @@
       </AnchorPane>
       <AnchorPane fx:id="playingZone" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button layoutX="415.0" layoutY="77.0" mnemonicParsing="false" text="Hit" />
-            <Button layoutX="515.0" layoutY="77.0" mnemonicParsing="false" text="Stand" />
+            <Button fx:id="hitButton" layoutX="415.0" layoutY="77.0" mnemonicParsing="false" text="Hit" />
+            <Button fx:id="standButton" layoutX="515.0" layoutY="77.0" mnemonicParsing="false" text="Stand" />
             <Button fx:id="resetButton" layoutX="884.0" layoutY="21.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="Reset" />
             <HBox layoutX="17.0" layoutY="14.0" prefHeight="100.0" prefWidth="62.0">
                <children>
@@ -35,10 +35,16 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="420.0" layoutY="690.0" text="Player Value: " />
-            <Label fx:id="dealerValue" layoutX="431.0" layoutY="352.0" text="Dealer Value:  " />
+            <Label fx:id="playerValue" alignment="CENTER" layoutX="420.0" layoutY="690.0" />
+            <Label fx:id="dealerValue" layoutX="431.0" layoutY="352.0" />
             <HBox fx:id="playerzone" layoutX="8.0" layoutY="369.0" prefHeight="340.0" prefWidth="946.0" spacing="10.0" />
             <HBox fx:id="dealerzone" layoutX="7.0" layoutY="135.0" prefHeight="217.0" prefWidth="946.0" spacing="10.0" />
+            <Label fx:id="winnerLabel" layoutX="467.0" layoutY="409.0" />
+            <Label fx:id="gameOver" layoutX="390.0" layoutY="280.0" prefHeight="137.0" prefWidth="252.0">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
     </children>
