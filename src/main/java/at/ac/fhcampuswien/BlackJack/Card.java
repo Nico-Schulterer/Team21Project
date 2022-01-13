@@ -35,6 +35,8 @@ public class Card extends Parent {
 
         Rectangle card = new Rectangle(100, 150);
         card.setFill(Color.WHITE);
+        card.setArcHeight(15);
+        card.setArcWidth(15);
 
         Text text = new Text(toString());
 

@@ -52,6 +52,17 @@ public class Main extends Application implements Initializable {
         standButton.setDisable(!isActive);
         standButton.setOnAction(event -> standUpdate());
 
+        dealer.worthProperty().addListener(((observable, oldValue, newValue) -> {
+            if(newValue.intValue() >= 21){
+                endGame();
+            }
+        }));
+        player.worthProperty().addListener(((observable, oldValue, newValue) -> {
+            if(newValue.intValue() >= 21){
+                endGame();
+            }
+        }));
+
     }
 
     @Override
@@ -70,6 +81,8 @@ public class Main extends Application implements Initializable {
 
     public void startGame(){
         isActive = true;
+        gameOver.setText("");
+        winnerLabel.setText("");
         playButton.setDisable(isActive);
         resetButton.setDisable(!isActive);
         hitButton.setDisable(!isActive);
@@ -107,19 +120,23 @@ public class Main extends Application implements Initializable {
 
     public void endGame(){
         isActive = false;
-        int dealerValue = dealer.worthProperty().get();
-        int playerValue = player.worthProperty().get();
+        int dealerEndValue = dealer.worthProperty().get();
+        int playerEndValue = player.worthProperty().get();
         String winner = "";
 
-        if (dealerValue  == 21 || playerValue > 21 || (dealerValue < 21 && dealerValue > playerValue)) {
+        if (dealerEndValue  == 21 || playerEndValue > 21 || (dealerEndValue < 21 && dealerEndValue > playerEndValue)) {
             winner = "Dealer Won";
-        } else if (playerValue == 21 || dealerValue > 21 ||  playerValue > dealerValue){
+        } else if (playerEndValue == 21 || dealerEndValue > 21 ||  playerEndValue > dealerEndValue){
             winner = "Player Won";
         }  else {
             winner = "Push (Tie)";
         }
         gameOver.setText("GAME OVER");
         winnerLabel.setText(winner);
+        playButton.setDisable(isActive);
+        resetButton.setDisable(!isActive);
+        hitButton.setDisable(!isActive);
+        standButton.setDisable(!isActive);
 
     }
 

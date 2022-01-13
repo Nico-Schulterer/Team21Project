@@ -24,7 +24,7 @@ public class Hand {
             aces++;
         }
 
-        if(worth.get() + card.worth > 21 && aces > 0) {
+        if(worth.get() + card.worth > 21 && aces > 0 && card.number == Number.Ace) {
 
             worth.set(worth.get() + card.worth - 10);
             aces--;
