@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 
 public class Card extends Parent {
 
-    public enum Suit{
+    public enum Suit {
         Heart, Diamond, Club, Spade
     }
 
@@ -17,6 +17,7 @@ public class Card extends Parent {
         Two(2), Three(3), Four(4), Five(5), Six(6), Seven(7), Eight(8),
         Nine(9), Ten(10), Jack(10), Queen(10), King(10), Ace(11);
         final int worth;
+
         Number(int worth) {
             this.worth = worth;
         }
@@ -27,7 +28,7 @@ public class Card extends Parent {
     public final int worth;
 
 
-    public Card(Suit suit, Number number){
+    public Card(Suit suit, Number number) {
 
         this.suit = suit;
         this.number = number;
@@ -40,11 +41,11 @@ public class Card extends Parent {
 
         Text text = new Text(toString());
 
-        getChildren().add(new StackPane(card,text));
+        getChildren().add(new StackPane(card, text));
 
     }
 
-    public String toString(){
+    public String toString() {
         return this.suit.toString() + " " + this.number.toString();
     }
 }

@@ -20,11 +20,11 @@ public class Hand {
 
         deck.add(card);
 
-        if(card.number == Number.Ace) {
+        if (card.number == Number.Ace) {
             aces++;
         }
-
-        if(worth.get() + card.worth > 21 && aces > 0 && card.number == Number.Ace) {
+        //Ace card still bugged, have to fix
+        if (worth.get() + card.worth > 21 && aces > 0 && card.number == Number.Ace) {
 
             worth.set(worth.get() + card.worth - 10);
             aces--;
@@ -48,7 +48,7 @@ public class Hand {
         return worth;
     }
 
-    public int getCardCount(){
+    public int getCardCount() {
         return cardCount;
     }
 

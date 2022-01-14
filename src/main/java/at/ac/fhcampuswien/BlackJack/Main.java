@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -23,8 +24,8 @@ public class Main extends Application implements Initializable {
 
 
     @FXML
-    public HBox playerzone;
-    public HBox dealerzone;
+    public HBox playerZone;
+    public HBox dealerZone;
     public Button resetButton;
     public Button playButton;
     public Button hitButton;
@@ -40,9 +41,9 @@ public class Main extends Application implements Initializable {
         createGame();
     }
 
-    private void createGame(){
-        dealer = new Hand(dealerzone.getChildren());
-        player = new Hand(playerzone.getChildren());
+    private void createGame() {
+        dealer = new Hand(dealerZone.getChildren());
+        player = new Hand(playerZone.getChildren());
 
         playButton.setOnAction(event -> startGame());
         resetButton.setDisable(!isActive);
@@ -53,12 +54,12 @@ public class Main extends Application implements Initializable {
         standButton.setOnAction(event -> standUpdate());
 
         dealer.worthProperty().addListener(((observable, oldValue, newValue) -> {
-            if(newValue.intValue() >= 21){
+            if (newValue.intValue() >= 21) {
                 endGame();
             }
         }));
         player.worthProperty().addListener(((observable, oldValue, newValue) -> {
-            if(newValue.intValue() >= 21){
+            if (newValue.intValue() >= 21) {
                 endGame();
             }
         }));
@@ -79,7 +80,7 @@ public class Main extends Application implements Initializable {
 
     }
 
-    public void startGame(){
+    public void startGame() {
         isActive = true;
         gameOver.setText("");
         winnerLabel.setText("");
@@ -100,35 +101,35 @@ public class Main extends Application implements Initializable {
         player.addCard(deck.takeCard());
     }
 
-    public void resetGame(){
+    public void resetGame() {
         startGame();
     }
 
-    public void hitUpdate(){
+    public void hitUpdate() {
         player.addCard(deck.takeCard());
         dealerValue.textProperty().bind(new SimpleStringProperty("Dealer Value: ").concat(dealer.worthProperty().asString()));
         playerValue.textProperty().bind(new SimpleStringProperty("Player Value: ").concat(player.worthProperty().asString()));
     }
 
-    public void standUpdate(){
-        while (dealer.worthProperty().get() < player.worthProperty().get()){
+    public void standUpdate() {
+        while (dealer.worthProperty().get() <= player.worthProperty().get()) {
             dealer.addCard(deck.takeCard());
             dealerValue.textProperty().bind(new SimpleStringProperty("Dealer Value: ").concat(dealer.worthProperty().asString()));
         }
         endGame();
     }
 
-    public void endGame(){
+    public void endGame() {
         isActive = false;
         int dealerEndValue = dealer.worthProperty().get();
         int playerEndValue = player.worthProperty().get();
         String winner = "";
 
-        if (dealerEndValue  == 21 || playerEndValue > 21 || (dealerEndValue < 21 && dealerEndValue > playerEndValue)) {
+        if (dealerEndValue == 21 || playerEndValue > 21 || (dealerEndValue < 21 && dealerEndValue > playerEndValue)) {
             winner = "Dealer Won";
-        } else if (playerEndValue == 21 || dealerEndValue > 21 ||  playerEndValue > dealerEndValue){
+        } else if (playerEndValue == 21 || dealerEndValue > 21 || playerEndValue > dealerEndValue) {
             winner = "Player Won";
-        }  else {
+        } else {
             winner = "Push (Tie)";
         }
         gameOver.setText("GAME OVER");
@@ -142,7 +143,6 @@ public class Main extends Application implements Initializable {
 
     public static void main(String[] args) {
         launch(args);
-
 
 
     }

@@ -37,8 +37,8 @@
             </Label>
             <Label fx:id="playerValue" alignment="CENTER" layoutX="435.0" layoutY="690.0" />
             <Label fx:id="dealerValue" layoutX="435.0" layoutY="340.0" textAlignment="CENTER" />
-            <HBox fx:id="playerzone" layoutX="8.0" layoutY="369.0" prefHeight="340.0" prefWidth="946.0" spacing="10.0" />
-            <HBox fx:id="dealerzone" layoutX="7.0" layoutY="135.0" prefHeight="217.0" prefWidth="946.0" spacing="10.0" />
+            <HBox fx:id="playerZone" layoutX="8.0" layoutY="369.0" prefHeight="340.0" prefWidth="946.0" spacing="10.0" />
+            <HBox fx:id="dealerZone" layoutX="7.0" layoutY="135.0" prefHeight="217.0" prefWidth="946.0" spacing="10.0" />
             <Label fx:id="winnerLabel" layoutX="430.0" layoutY="350.0" textAlignment="CENTER">
                <font>
                   <Font size="19.0" />
