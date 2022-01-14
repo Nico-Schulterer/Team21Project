@@ -5,9 +5,9 @@
 - `Updated user interface`
 ---
 ###Contributors:
-- *Aleksandra Trninic*
-- *Nicolas Schulterer*
-- *Ishak Sijamhodzic*
+- Aleksandra Trninic
+- Nicolas Schulterer
+- Ishak Sijamhodzic
 ---
 > #How to play
 > Blackjack is a card game in which you are trying to beat the dealer by scoring closer to 21. The catch is that you cannot ‘bust’ and your hand cannot exceed the value of 21 or you automatically lose the round.
@@ -22,4 +22,5 @@
 > ###Stand
 > Standing occurs when you wish to stop receiving cards and believe that your hand will hold up as the best hand or, alternatively, if you hit then you are very likely to bust.
 ---
+##Enjoy!
 
