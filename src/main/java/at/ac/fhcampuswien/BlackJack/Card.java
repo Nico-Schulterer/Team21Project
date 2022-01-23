@@ -1,10 +1,12 @@
 package at.ac.fhcampuswien.BlackJack;
 
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.scene.paint.Color;
 
 
 public class Card extends Parent {
@@ -40,7 +42,6 @@ public class Card extends Parent {
         card.setArcWidth(15);
 
         Text text = new Text(toString());
-
         getChildren().add(new StackPane(card, text));
 
     }
@@ -48,4 +49,6 @@ public class Card extends Parent {
     public String toString() {
         return this.suit.toString() + " " + this.number.toString();
     }
+
 }
+

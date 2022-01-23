@@ -9,6 +9,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -21,6 +23,8 @@ public class Main extends Application implements Initializable {
     private Dealer deck = new Dealer();
     private Hand player, dealer;
     private boolean isActive = false;
+    private int betValueNumber;
+    private int moneyInPlay;
 
 
     @FXML
@@ -35,6 +39,10 @@ public class Main extends Application implements Initializable {
     public Label playerValue;
     public Label gameOver;
     public Label winnerLabel;
+    public Label betMoney;
+    public Button betButton;
+    public TextField betValue;
+    public Label betThisRound;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -52,6 +60,10 @@ public class Main extends Application implements Initializable {
         hitButton.setOnAction(event -> hitUpdate());
         standButton.setDisable(!isActive);
         standButton.setOnAction(event -> standUpdate());
+        betButton.setOnAction(event -> betPressed());
+        betValueNumber = 500;
+        moneyInPlay = 0;
+        betMoney.textProperty().bind(new SimpleStringProperty("Your bet money: $").concat(betValueNumber));
 
         dealer.worthProperty().addListener(((observable, oldValue, newValue) -> {
             if (newValue.intValue() >= 21) {
@@ -79,12 +91,15 @@ public class Main extends Application implements Initializable {
         stage.show();
 
     }
-
+//startGame method starts the game
     public void startGame() {
         isActive = true;
+        //game is set as "active"
         gameOver.setText("");
         winnerLabel.setText("");
         playButton.setDisable(isActive);
+        betButton.setDisable(isActive);
+        betValue.setDisable(isActive);
         resetButton.setDisable(!isActive);
         hitButton.setDisable(!isActive);
         standButton.setDisable(!isActive);
@@ -119,6 +134,15 @@ public class Main extends Application implements Initializable {
         endGame();
     }
 
+    public void betPressed(){
+        int betInputNumber = Integer.parseInt(betValue.getText());
+        betValueNumber -= betInputNumber;
+        moneyInPlay += betInputNumber;
+        betMoney.textProperty().bind(new SimpleStringProperty("Your bet money: $").concat(betValueNumber));
+        betThisRound.textProperty().bind(new SimpleStringProperty("Money bet this round: $").concat(moneyInPlay));
+        betValue.clear();
+    }
+
     public void endGame() {
         isActive = false;
         int dealerEndValue = dealer.worthProperty().get();
@@ -129,12 +153,19 @@ public class Main extends Application implements Initializable {
             winner = "Dealer Won";
         } else if (playerEndValue == 21 || dealerEndValue > 21 || playerEndValue > dealerEndValue) {
             winner = "Player Won";
+            betValueNumber += (moneyInPlay * 2);
         } else {
             winner = "Push (Tie)";
+            betValueNumber += moneyInPlay;
         }
+        moneyInPlay = 0;
+        betThisRound.textProperty().bind(new SimpleStringProperty("Money bet this round: $").concat(moneyInPlay));
+        betMoney.textProperty().bind(new SimpleStringProperty("Your bet money: $").concat(betValueNumber));
         gameOver.setText("GAME OVER");
         winnerLabel.setText(winner);
         playButton.setDisable(isActive);
+        betButton.setDisable(isActive);
+        betValue.setDisable(isActive);
         resetButton.setDisable(!isActive);
         hitButton.setDisable(!isActive);
         standButton.setDisable(!isActive);
