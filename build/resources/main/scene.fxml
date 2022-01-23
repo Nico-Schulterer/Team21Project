@@ -16,7 +16,7 @@
                </children></HBox>
             <ImageView fitHeight="728.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Downloads/Team%2021%20Blackjack/Table/Team%2021%20Pocker%20Background.png" />
+                  <Image url="https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Team%2021%20Pocker%20Background.png" />
                </image>
             </ImageView>
             <HBox prefHeight="100.0" prefWidth="200.0">
