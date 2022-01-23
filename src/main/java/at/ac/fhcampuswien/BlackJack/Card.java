@@ -30,7 +30,7 @@ public class Card extends Parent {
     public final int worth;
 
 
-    public Card(Suit suit, Number number) {
+    public Card(Suit suit, Number number){
 
         this.suit = suit;
         this.number = number;

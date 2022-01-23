@@ -1,5 +1,5 @@
 #TEAM21 Blackjack
-***Version 1.0.0***
+***Version 1.2.0***
 ###Coming soon:
 - `Additional game variations`
 - `Updated user interface`
