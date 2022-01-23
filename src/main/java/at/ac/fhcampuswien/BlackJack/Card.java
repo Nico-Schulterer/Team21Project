@@ -63,7 +63,11 @@ public class Card extends Parent {
 
     public Image cardImage(){
         if(this.suit == Suit.Heart){
-            if(this.number == Number.Four){
+            if(this.number == Number.Two){
+                return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Hearts/2%20of%20Hearts.png");
+            }else if(this.number == Number.Three){
+                return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Hearts/3%20of%20Hearts.png");
+            }else if(this.number == Number.Four){
                 return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Hearts/4%20of%20Hearts.png");
             }else if (this.number == Number.Five){
                 return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Hearts/5%20of%20Hearts.png");
@@ -87,7 +91,11 @@ public class Card extends Parent {
                 return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Hearts/Ace%20of%20Hearts.png");
             }
         }else if(this.suit == Suit.Diamond){
-            if(this.number == Number.Four){
+            if(this.number == Number.Two){
+                return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Diamonds/2%20of%20Diamonds.png");
+            }else if(this.number == Number.Three){
+                return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Diamonds/3%20of%20Diamonds.png");
+            }else if(this.number == Number.Four){
                 return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Diamonds/4%20of%20Diamonds.png");
             }else if (this.number == Number.Five){
                 return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Diamonds/5%20of%20Diamonds.png");
@@ -111,7 +119,11 @@ public class Card extends Parent {
                 return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Diamonds/Ace%20of%20Diamonds.png");
             }
         }else if(this.suit == Suit.Club){
-            if(this.number == Number.Four){
+            if (this.number == Number.Two){
+                return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Clubs/2%20of%20Clubs.png");
+            }else if (this.number == Number.Three){
+                return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Clubs/3%20of%20Clubs.png");
+            }if(this.number == Number.Four){
                 return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Clubs/4%20of%20Clubs.png");
             }else if (this.number == Number.Five){
                 return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Clubs/5%20of%20Clubs.png");
@@ -135,7 +147,11 @@ public class Card extends Parent {
                 return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Clubs/Ace%20of%20Clubs.png");
             }
         }else if (this.suit == Suit.Spade){
-            if(this.number == Number.Four){
+            if (this.number == Number.Two){
+                return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Spades/2%20of%20Spades.png");
+            }else if (this.number == Number.Three){
+                return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Spades/3%20of%20Spades.png");
+            }else if(this.number == Number.Four){
                 return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Spades/4%20of%20Spades.png");
             }else if (this.number == Number.Five){
                 return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Spades/5%20of%20Spades.png");
@@ -156,7 +172,7 @@ public class Card extends Parent {
             }else if (this.number == Number.King) {
                 return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Spades/King%20of%20Spades.png");
             }else if (this.number == Number.Ace) {
-                return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Spades/Ace%20of%20Spades.png");
+                return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/Spades/Ace%20of%20Spades%E2%89%A1%C6%92%C3%B1%C3%BF.png");
             }
         }
         return new Image("https://raw.githubusercontent.com/Nico-Schulterer/Team21Project/master/src/main/images/Cards/%23%20Card%20Back%20Side.png");
