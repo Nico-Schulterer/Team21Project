@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.BlackJack.Main">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.BlackJack.Main">
     <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -21,44 +26,53 @@
             </ImageView>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#574428" height="119.0" stroke="BLACK" strokeType="INSIDE" width="960.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#391b00" height="119.0" stroke="BLACK" strokeType="INSIDE" width="960.0" />
                </children>
             </HBox>
             <StackPane prefHeight="150.0" prefWidth="200.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="playingZone" prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane fx:id="playingZone" prefHeight="770.0" prefWidth="1031.0">
          <children>
-            <Button fx:id="hitButton" layoutX="415.0" layoutY="77.0" mnemonicParsing="false" text="Hit" />
-            <Button fx:id="standButton" layoutX="515.0" layoutY="77.0" mnemonicParsing="false" text="Stand" />
-            <Button fx:id="resetButton" layoutX="884.0" layoutY="21.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="Reset" />
-            <HBox layoutX="17.0" layoutY="14.0" prefHeight="50.0" prefWidth="62.0">
+            <Button fx:id="hitButton" layoutX="391.0" layoutY="77.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="Hit" />
+            <Button fx:id="standButton" layoutX="500.0" layoutY="77.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="73.0" text="Stand" />
+            <Button fx:id="resetButton" layoutX="878.0" layoutY="14.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="68.0" text="Reset" />
+            <HBox layoutX="18.0" layoutY="14.0" prefHeight="44.0" prefWidth="273.0">
                <children>
-                  <Button fx:id="playButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="Play" />
+                  <Button fx:id="playButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="62.0" text="Play" />
                </children>
             </HBox>
-              <Label fx:id="label" layoutX="430.0" layoutY="20.0" text="Blackjack">
+              <Label fx:id="label" layoutX="362.0" layoutY="14.0" text="B  l  a  c  k  j  a  c  k">
                <font>
-                  <Font size="26.0" />
+                  <Font name="Moniqa Black Display" size="41.0" />
                </font>
             </Label>
-            <Label fx:id="playerValue" alignment="CENTER" layoutX="435.0" layoutY="690.0" />
-            <Label fx:id="dealerValue" layoutX="435.0" layoutY="340.0" textAlignment="CENTER" />
-            <HBox fx:id="playerZone" layoutX="8.0" layoutY="369.0" prefHeight="340.0" prefWidth="946.0" spacing="10.0" />
-            <HBox fx:id="dealerZone" layoutX="7.0" layoutY="135.0" prefHeight="217.0" prefWidth="946.0" spacing="10.0" />
-            <Label fx:id="winnerLabel" layoutX="430.0" layoutY="350.0" textAlignment="CENTER">
+            <Label fx:id="playerValue" alignment="CENTER" layoutX="420.0" layoutY="680.0" prefHeight="17.0" prefWidth="156.0">
                <font>
-                  <Font size="19.0" />
+                  <Font size="20.0" />
                </font></Label>
-            <Label fx:id="gameOver" layoutX="365.0" layoutY="260.0" prefHeight="137.0" prefWidth="252.0">
+            <Label fx:id="dealerValue" layoutX="435.0" layoutY="340.0" prefHeight="17.0" prefWidth="195.0" textAlignment="CENTER">
                <font>
-                  <Font size="40.0" />
+                  <Font size="20.0" />
+               </font></Label>
+            <HBox fx:id="playerZone" layoutX="10.0" layoutY="349.0" prefHeight="340.0" prefWidth="946.0" spacing="10.0">
+               <children>
+                  <Label fx:id="gameOver" prefHeight="137.0" prefWidth="252.0">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+               </children></HBox>
+            <HBox fx:id="dealerZone" layoutX="7.0" layoutY="135.0" prefHeight="217.0" prefWidth="946.0" spacing="10.0" />
+            <Label fx:id="winnerLabel" layoutX="404.0" layoutY="363.0" prefHeight="63.0" prefWidth="378.0" textAlignment="CENTER">
+               <font>
+                  <Font size="50.0" />
                </font>
             </Label>
-            <Button fx:id="betButton" layoutX="17.0" layoutY="65.0" mnemonicParsing="false" text="Bet" />
-            <TextField fx:id="betValue" layoutX="51.0" layoutY="64.0" prefHeight="28.0" prefWidth="113.0" promptText="Input e.g. 50" />
-            <Label fx:id="betMoney" layoutX="671.0" layoutY="82.0" prefHeight="17.0" prefWidth="201.0" text="Your bet money: $" />
-            <Label fx:id="betThisRound" layoutX="202.0" layoutY="81.0" text="Money bet this round: " />
+            <Button fx:id="betButton" layoutX="20.0" layoutY="70.0" mnemonicParsing="false" text="Bet" />
+            <TextField fx:id="betValue" layoutX="72.0" layoutY="70.0" prefHeight="28.0" prefWidth="113.0" promptText="Input e.g. 50" />
+            <Label fx:id="betMoney" layoutX="670.0" layoutY="75.0" prefHeight="17.0" prefWidth="201.0" text="Your bet money: $" textFill="#ffffff" />
+            <Label fx:id="betThisRound" layoutX="204.0" layoutY="75.0" text="Money bet this round: " textFill="#ffffff" />
          </children>
       </AnchorPane>
     </children>

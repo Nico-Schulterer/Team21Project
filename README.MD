@@ -12,6 +12,8 @@
 > #How to play
 > Blackjack is a card game in which you are trying to beat the dealer by scoring closer to 21. The catch is that you cannot ‘bust’ and your hand cannot exceed the value of 21 or you automatically lose the round.
 > 
+> ###Bet
+> Before every game you can choose amount on which you want to bet (0-500$).
 > ###Card Values
 > Card values in blackjack are incredibly straightforward to understand. Number cards are valued at the number they have written on them and any face card (Jack, Queen, or King) is worth 10.
 > >Aces either have a value of 1 or 11 and depending on the rest of your cards.
